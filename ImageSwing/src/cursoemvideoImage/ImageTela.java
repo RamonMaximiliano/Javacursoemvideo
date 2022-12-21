@@ -10,6 +10,7 @@ Fazer nova tela em que mostra o idioma do sistema
 package cursoemvideoImage;
 
 import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ImageTela extends javax.swing.JFrame {
     public ImageTela() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,6 +38,9 @@ public class ImageTela extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
         btnHora = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        language = new javax.swing.JLabel();
+        buttonLanguage = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +57,20 @@ public class ImageTela extends javax.swing.JFrame {
         btnHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHoraActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel3.setText("System language");
+
+        language.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        language.setText("This is the language");
+
+        buttonLanguage.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        buttonLanguage.setText("Check language");
+        buttonLanguage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLanguageActionPerformed(evt);
             }
         });
 
@@ -73,8 +91,16 @@ public class ImageTela extends javax.swing.JFrame {
                         .addComponent(btnHora))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(lblHora)))
-                .addContainerGap(454, Short.MAX_VALUE))
+                        .addComponent(lblHora))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonLanguage)
+                            .addComponent(language))))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +113,13 @@ public class ImageTela extends javax.swing.JFrame {
                 .addComponent(lblHora)
                 .addGap(32, 32, 32)
                 .addComponent(btnHora)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(language)
+                .addGap(31, 31, 31)
+                .addComponent(buttonLanguage)
+                .addGap(95, 95, 95))
         );
 
         pack();
@@ -98,6 +130,18 @@ public class ImageTela extends javax.swing.JFrame {
         Date relogio = new Date();
         lblHora.setText(relogio.toString());
     }//GEN-LAST:event_btnHoraActionPerformed
+
+    private void buttonLanguageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLanguageActionPerformed
+        // TODO add your handling code here:
+        Locale uiLocale = Locale.getDefault(Locale.Category.DISPLAY);
+        String languageName = uiLocale.getDisplayLanguage(uiLocale);
+        String countryName = uiLocale.getDisplayLanguage(uiLocale);
+        // usually something like langage (country), i.e. polski (Polska)
+        String localeName = uiLocale.getDisplayName(uiLocale);
+        
+        language.setText(localeName);
+        
+    }//GEN-LAST:event_buttonLanguageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,8 +180,11 @@ public class ImageTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHora;
+    private javax.swing.JButton buttonLanguage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel language;
     private javax.swing.JLabel lblHora;
     // End of variables declaration//GEN-END:variables
 }

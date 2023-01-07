@@ -38,8 +38,8 @@ public class adivinha extends javax.swing.JFrame {
 
         falagenio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         falagenio.setForeground(new java.awt.Color(0, 0, 0));
-        falagenio.setText("Vou pensar em um valor entre 1 e 5. Tente adivinhar");
-        getContentPane().add(falagenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 110, 40));
+        falagenio.setText("Adivinhe um numero entre 1 e 5");
+        getContentPane().add(falagenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 740, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/balao.JPG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
@@ -66,8 +66,22 @@ public class adivinha extends javax.swing.JFrame {
 
     private void palpiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_palpiteActionPerformed
         int guess = Integer.parseInt(tryGuess.getValue().toString());
+        int genioNumber = (int) (1 + Math.random() * (6-1));
+        
+        String genioNumber2 = Integer.toString(genioNumber);
+                
+        if (guess != genioNumber){
+            String result = "O numero do genio foi: " + Integer.toString(genioNumber) + " Seu numero foi: " + Integer.toString(guess) + " VOCÊ ERROU!";
+            falagenio.setText(result);
+        } else {
+            String result = "O numero do genio foi: " + Integer.toString(genioNumber) + " Seu numero foi: " + Integer.toString(guess) + " VOCÊ ACERTOU!";
+            falagenio.setText(result);
+        }
 
-        falagenio.setText(Integer.toString(guess));
+
+        
+                
+        
 
 
         // TODO add your handling code here:
@@ -77,6 +91,7 @@ public class adivinha extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+     
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -100,6 +115,7 @@ public class adivinha extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

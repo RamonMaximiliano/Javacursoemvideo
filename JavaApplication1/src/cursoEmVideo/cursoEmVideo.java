@@ -81,6 +81,20 @@ public class cursoEmVideo extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        int n1,n2,result,result2;
+        n1 = 5;
+        n2 = 1;
+        /*Operador ternário*/
+        result = (n1>n2) ? 1:2;
+        System.out.println("O maior e "+result);
+        
+        
+        /*Ou exclusivo*/
+        result2 = (n1>n2 ^ n1>2)? 1:2;
+        System.out.println(result2);
+        
+        
+      
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -103,6 +117,7 @@ public class cursoEmVideo extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(cursoEmVideo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

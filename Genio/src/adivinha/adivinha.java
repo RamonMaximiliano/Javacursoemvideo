@@ -27,6 +27,7 @@ public class adivinha extends javax.swing.JFrame {
     private void initComponents() {
 
         falagenio = new javax.swing.JLabel();
+        genioAnswer = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tryGuess = new javax.swing.JSpinner();
@@ -41,8 +42,13 @@ public class adivinha extends javax.swing.JFrame {
         falagenio.setText("Adivinhe um numero entre 1 e 5");
         getContentPane().add(falagenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 740, 70));
 
+        genioAnswer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        genioAnswer.setForeground(new java.awt.Color(0, 0, 0));
+        genioAnswer.setText("Escolha um numero entre 1 e 5");
+        getContentPane().add(genioAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 270, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/balao.JPG"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18961.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
@@ -72,9 +78,11 @@ public class adivinha extends javax.swing.JFrame {
                 
         if (guess != genioNumber){
             String result = "O numero do genio foi: " + Integer.toString(genioNumber) + " Seu numero foi: " + Integer.toString(guess) + " VOCÊ ERROU!";
+            genioAnswer.setText("<html>O numero do genio foi: " + Integer.toString(genioNumber) + " Seu numero foi: " + Integer.toString(guess) + " VOCÊ ERROU!</html>");
             falagenio.setText(result);
         } else {
             String result = "O numero do genio foi: " + Integer.toString(genioNumber) + " Seu numero foi: " + Integer.toString(guess) + " VOCÊ ACERTOU!";
+            genioAnswer.setText("<html>O numero do genio foi: " + Integer.toString(genioNumber) + " Seu numero foi: " + Integer.toString(guess) + " VOCÊ ACERTOU!</html>");
             falagenio.setText(result);
         }
 
@@ -126,6 +134,7 @@ public class adivinha extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel falagenio;
+    private javax.swing.JLabel genioAnswer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

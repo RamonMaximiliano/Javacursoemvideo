@@ -75,6 +75,7 @@ public class cursoEmVideo extends javax.swing.JFrame {
     private void btnClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClickActionPerformed
         // TODO add your handling code here:
         lblMessage.setText("Hello World!");
+        /*Testing*/
     }//GEN-LAST:event_btnClickActionPerformed
 
     /**

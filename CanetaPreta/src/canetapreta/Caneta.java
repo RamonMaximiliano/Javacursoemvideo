@@ -7,7 +7,7 @@ public class Caneta {
     float ponta;
     int carga;
     boolean tampada;
-    
+    /*Test*/
     void status(){
         System.out.println("Uma caneta " + this.cor);
         System.out.println("Modelo: " + this.modelo);

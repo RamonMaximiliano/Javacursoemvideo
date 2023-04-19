@@ -10,6 +10,15 @@ public class ContaBanco {
     private boolean status;
 
     //Métodos personalizados
+    public void estadoAtual() {
+        System.out.println("------------------------");
+        System.out.println("Conta:" + this.getNumConta());
+        System.out.println("Tipo:" + this.getTipo());
+        System.out.println("Dono:" + this.getDono());
+        System.out.println("Saldo:" + this.getSaldo());
+        System.out.println("Status:" + this.getStatus());
+    }
+
     public void abrirConta(String t) {
         this.setTipo(t);
         this.setStatus(true);
@@ -124,6 +133,6 @@ public class ContaBanco {
 /*
 https://www.youtube.com/watch?v=hOC461osYgk&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=11&ab_channel=CursoemV%C3%ADdeo
 
-- Criar método mostrar estado atual 19 min
+- Criar conta na classe principal 21 min
 
  */

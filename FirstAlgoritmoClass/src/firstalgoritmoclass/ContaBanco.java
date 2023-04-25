@@ -23,9 +23,9 @@ public class ContaBanco {
         this.setTipo(t);
         this.setStatus(true);
         if (t == "CC") {
-            this.setSaldo(50);
+            this.saldo =50f;
         } else if (t == "CP") {
-            this.setSaldo(150);
+            this.saldo = 100f;
         }
         System.out.println("Conta ABERTA com sucesso!");
     }
@@ -43,7 +43,9 @@ public class ContaBanco {
 
     public void depositar(float v) {
         if (this.status == true) {
-            setSaldo(this.getSaldo() + v);
+            System.out.println(this.getSaldo());
+            
+            this.setSaldo(v);
         } else {
             System.out.println("Impossível depositar!");
         }
@@ -52,7 +54,7 @@ public class ContaBanco {
     public void sacar(float v) {
         if (this.status == true) {
             if (this.saldo >= v) {
-                setSaldo(this.saldo - v);
+                this.setSaldo(this.saldo - v);
                 System.out.println("Saldo de " + v + "realizado na conta!");
             } else {
                 System.out.println("Saldo insuficiente!");
@@ -112,14 +114,14 @@ public class ContaBanco {
         this.dono = Dono;
     }
 
-    public float getSaldo() {
-        return this.saldo;
-    }
-
-    public void setSaldo(float s) {
+      public void setSaldo(float s) {
         this.saldo = getSaldo() + s;
     }
-
+    
+     public float getSaldo() {
+        return this.saldo;
+    }
+      
     public boolean getStatus() {
         return this.status;
     }

@@ -9,7 +9,7 @@ public class UltraEmojiCombat {
         Lutador l[] = new Lutador[2];
 
         l[0] = new Lutador("John", "Brasil", 29, 1.65f, 60f, 18, 1, 0);
-        l[1] = new Lutador("Roger", "EUA", 25, 1.61f, 69f, 10, 0, 1);
+        l[1] = new Lutador("Roger", "EUA", 25, 1.61f, 69f, 9, 0, 1);
 
         l[0].status();
         System.out.println("APRESENTAR");
@@ -19,8 +19,12 @@ public class UltraEmojiCombat {
         System.out.println("APRESENTAR");
         l[1].apresentar();
         System.out.println("--------------------------");
-        L1.status();
+       /* L1.status();
         System.out.println("APRESENTAR");
-        L1.apresentar();
+        L1.apresentar();*/
+        
+        Luta UEC01 = new Luta();
+        UEC01.marcarLuta(l[0] , l[1]);
+        UEC01.Lutar();
     }
 };

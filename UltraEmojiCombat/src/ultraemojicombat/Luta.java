@@ -1,21 +1,67 @@
-
 package ultraemojicombat;
 
+import java.util.Random;
 
 public class Luta {
+
     //atributos
     private Lutador desafiante;
     private Lutador desafiado;
     private int rounds;
     private boolean aprovada;
-    
+
     //Métodos publicos
-    public void marcarLuta(){
-    
-    };
-    public void Lutar(){
-    
-    };
+    public void marcarLuta(Lutador l1, Lutador l2) {
+        if (l1.getCategoria().equals(l2.getCategoria()) && l1 != l2) {
+            this.aprovada = true;
+            this.desafiante = l2;
+            this.desafiado = l1;
+        } else {
+            this.aprovada = false;
+            this.desafiante = null;
+            this.desafiado = null;
+        }
+    }
+
+    ;
+    public void Lutar() {
+        if (this.aprovada) {
+            System.out.println("###DESAFIADO###");
+            this.desafiado.apresentar();
+            System.out.println("###DESAFIANTE###");
+            this.desafiante.apresentar();
+
+            Random aleatorio = new Random();
+            int vencedor = aleatorio.nextInt(3); // 0 1 2 
+            switch (vencedor) {
+                case 0: //Empate  
+                    System.out.println("--------------------------");
+                    System.out.println("RESULTADO DA LUTA:");
+                    System.out.println("Empatou!");
+                    this.desafiado.empatarLuta();
+                    this.desafiante.empatarLuta();
+                    break;
+                case 1: //Desafiado vence  
+                    System.out.println("--------------------------");
+                    System.out.println("RESULTADO DA LUTA:");
+                    System.out.println("Vitória do:" + this.desafiado.getNome());
+                    this.desafiado.ganharLuta();
+                    this.desafiante.perderLuta();
+                    break;
+                case 2: //Desafiante vence  
+                    System.out.println("--------------------------");
+                    System.out.println("RESULTADO DA LUTA:");
+                    System.out.println("Vitória do:" + this.desafiante.getNome());
+                    this.desafiante.ganharLuta();
+                    this.desafiado.perderLuta();
+                    break;
+            }
+        } else {
+            System.out.println("A luita não pode acontecer!");
+        }
+    }
+
+    ;
     
     //Métodos especiais:
 
@@ -50,7 +96,5 @@ public class Luta {
     public void setAprovada(boolean aprovada) {
         this.aprovada = aprovada;
     }
-    
-    
-    
+
 }

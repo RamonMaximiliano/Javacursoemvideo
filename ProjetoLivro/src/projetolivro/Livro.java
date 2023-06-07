@@ -1,6 +1,6 @@
 package projetolivro;
 
-public class Livro {
+public class Livro implements Publicacao {
 
     private String titulo;
     private String autor;
@@ -11,14 +11,17 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Livro{" + "titulo=" + titulo + ", autor=" + autor + ", totPaginas=" + totPaginas + ", pagAtual=" + pagAtual + ", aberto=" + aberto + ", leitor=" + leitor + '}';
+        // o \n abaixo é para pular a linha
+        return "Livro{" + "titulo = " + titulo + "\n, autor = " + autor + "\n, totPaginas = " + totPaginas + "\n, pagAtual = " + pagAtual + "\n, aberto = " + aberto + "\n, leitor = " + leitor.getNome() + "\n, idade = " + leitor.getIdade() + "\n, Sexo = " + leitor.getSexo() + '}';
     }
-    
 
+    //método construtor
     public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
         this.titulo = titulo;
         this.autor = autor;
         this.totPaginas = totPaginas;
+        this.pagAtual = 0;
+        this.aberto = false;
         this.leitor = leitor;
     }
 
@@ -70,6 +73,33 @@ public class Livro {
         this.leitor = leitor;
     }
 
-    
-    
+    @Override
+    public void abrir() {
+        this.aberto = true;
+    }
+
+    @Override
+    public void fechar() {
+        this.aberto = false;
+    }
+
+    @Override
+    public void folhear(int p) {
+        
+        if (p > this.totPaginas){
+            this.pagAtual = 0;
+        } else {
+            this.setPagAtual(p);
+        }
+    }
+
+    @Override
+    public void avancarPag() {
+        this.setPagAtual(this.getPagAtual() + 1);
+    }
+
+    @Override
+    public void voltarPag() {
+        this.setPagAtual(this.getPagAtual() - 1);
+    }
 }

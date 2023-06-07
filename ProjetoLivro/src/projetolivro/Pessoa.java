@@ -1,13 +1,12 @@
-
 package projetolivro;
 
-
 public class Pessoa {
+
     private String nome;
     private int idade;
     private String sexo;
-    
-    public void fazerAniver(){
+
+    public void fazerAniver() {
         this.idade = this.getIdade() + 1;
         // Poderia ser tbm =  this.idade++;
     }
@@ -41,6 +40,5 @@ public class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    
-    
+
 }

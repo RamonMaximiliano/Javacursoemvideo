@@ -1,19 +1,18 @@
+package projetoescola;
 
-package projetopessoas;
+public abstract class Pessoa {
 
-public class Pessoa {
     private String nome;
     private int idade;
     private String sexo;
-    
-    public void fazerAniversario(){
-        this.setIdade(this.getIdade() + 1);
+
+    public void fazerAniversario() {
+        this.idade++;
     }
 
     public String getNome() {
         return nome;
     }
-
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -35,9 +34,4 @@ public class Pessoa {
         this.sexo = sexo;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + '}';
-    }
-    
 }

@@ -11,7 +11,7 @@ public class ProjetoEscola {
         v1.setIdade(27);
         v1.setSexo("M");
         System.out.println(v1.toString());
-
+        System.out.println("=================================");
         Aluno a1 = new Aluno();
         a1.setNome("Claudio");
         a1.setMatricula(123456);
@@ -21,7 +21,7 @@ public class ProjetoEscola {
         a1.pagarMensalidade();
         System.out.println(a1.toString());
         System.out.println("Nome: " + a1.getNome() + " Matricula: " + a1.getMatricula() + " Curso: " + a1.getCurso());
-
+        System.out.println("=================================");
         Bolsista b1 = new Bolsista();
         b1.setMatricula(321654);
         b1.setNome("Jubileu");

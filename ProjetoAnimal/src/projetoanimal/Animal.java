@@ -6,6 +6,7 @@ public abstract class Animal {
     protected float peso;
     protected int idade;
     protected int membros;
+    protected String name;
 
     //Métodos animal       
     public abstract void locomover();
@@ -20,6 +21,14 @@ public abstract class Animal {
 
     public void setPeso(float peso) {
         this.peso = peso;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getIdade() {

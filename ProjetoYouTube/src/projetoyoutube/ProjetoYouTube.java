@@ -1,5 +1,10 @@
 package projetoyoutube;
 
+/**
+ * This is the creation of a Java doc
+ * @author WilbeR01
+ */
+
 public class ProjetoYouTube {
 
     public static void main(String[] args) {
